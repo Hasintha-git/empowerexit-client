@@ -4,13 +4,13 @@
           <img class="login-side2-image" src="../../../../assets/images/Logo2.png" alt="">
 
           <div class="login-side1-row-title">
-                <h2 class="welcome">Register Hotel</h2>
+                <h2 class="welcome">Register Company</h2>
             </div>
             <div style="display: flex;flex-direction: column;">
-                <label style="font-weight: 500;">Hotel Name</label>
+                <label style="font-weight: 500;">Company Name</label>
                 <mat-form-field class="ultra-max-field" appearance="outline">
                     <input matInput placeholder="Name" formControlName="first_name"  [(ngModel)]="signUpModel.first_name">
-                    <mat-error *ngIf="first_name?.hasError('required')">Hotel Name cannot be empty
+                    <mat-error *ngIf="first_name?.hasError('required')">Company Name cannot be empty
                     </mat-error>
                 </mat-form-field>
                 
