@@ -1,0 +1,276 @@
+<div class="profile_main">
+    <div class="no_data_row" *ngIf="!isNodata">{{nodata}}</div>
+    <div class="no_data_row" *ngIf="!isNoAllData">{{nodata1}}</div>
+    <div class="header-btn-section">
+        <button mat-flat-button class="btn_cancel"  routerLink="/post-login/employee-analytics/" >
+            Back </button>
+        <button mat-flat-button class="btn-header"  routerLink="edit-employee-profile" [queryParams]="{ id: employeeModel.id}">
+            Edit Profile </button>
+    </div>
+    <div class="div_main_1" >
+        <!-- <div class="div_main_1_title">
+            <p class="txt_title">Current Status : {{currentStatus}}</p>
+            <mat-slide-toggle style="padding-left: 10px;" color="primary"></mat-slide-toggle>
+
+        </div> -->
+        <div class="div_main_1_body">
+            <div class="card_1">
+                <div class="card_1_side1">
+                    <div class="profile_img_div">
+                      <img style="width: 100%;height: 100%;" src="../../../../../../assets/icons/user.png" alt="">
+                    </div>
+                </div>
+                <div class="card_1_side2">
+
+                    <mat-label class="mtLblSpace">Employee Id : <span style="padding-left: 20px;">{{employeeModel.emp_id}}</span></mat-label>
+                    <mat-label class="mtLblSpace">Name : <span style="padding-left: 20px;">{{employeeModel.name}}</span></mat-label>
+                    <mat-label class="mtLblSpace">Joined On : <span style="padding-left: 20px;">{{employeeModel.joined_date}}</span></mat-label>
+                </div>
+            </div>
+            <div class="card_2">
+                <div class="card_2_side1">
+
+                    <mat-label class="mtLblSpace">Designation : <span style="padding-left: 20px;">{{employeeModel.designation}}</span></mat-label>
+                    <mat-label class="mtLblSpace">Department : <span style="padding-left: 20px;">{{employeeModel.department_id}}</span></mat-label>
+                    <mat-label class="mtLblSpace">Supervisor : <span style="padding-left: 20px;">{{employeeModel.supervisor}}</span></mat-label>
+                </div>
+            </div>
+            <div class="card_3">
+                <div class="card_3_side1">
+
+                    <mat-label class="mtLblSpace">Address : <span style="padding-left: 20px;">{{employeeModel.address}}</span></mat-label>
+                    <mat-label class="mtLblSpace">Contact Number : <span style="padding-left: 20px;">{{employeeModel.contact}}</span></mat-label>
+                    <mat-label class="mtLblSpace">Performance Grade : <span
+                            style="padding-left: 20px;">{{employeeModel.performance_grade}}</span></mat-label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="div_main_1" *ngIf="!viewOrEditModeEnable">
+        <div class="div_main_1_title">
+            <!-- <p class="txt_title">Current Status : {{currentStatus}}</p> -->
+            <mat-slide-toggle style="padding-left: 10px;" color="primary"></mat-slide-toggle>
+
+        </div>
+        <div class="div_main_1_body">
+            <div class="card_1">
+                <div class="card_1_side1">
+                    <div class="profile_img_div"></div>
+                </div>
+                <div class="card_1_txt_space">
+
+                    <mat-label>Emplpoyee Id : <span style="padding-left: 10px;">
+                            <input value="AB1234" matInput
+                                style="width: 120px;border-radius: 5px;border: 1px solid gray;">
+                        </span></mat-label>
+                    <mat-label>Name : <span style="padding-left: 10px;">
+                            <input value="A.D Silva" matInput
+                                style="width: 120px;border-radius: 5px;border: 1px solid gray;">
+                        </span></mat-label>
+                    <mat-label>Joined On : <span style="padding-left: 10px;">
+                            <input value="12th June 2020" matInput
+                                style="width: 120px;border-radius: 5px;border: 1px solid gray;">
+                        </span></mat-label>
+                </div>
+            </div>
+            <div class="card_2">
+                <div class="card_1_txt_space">
+
+                    <mat-label>Designation : <span style="padding-left: 10px;">
+                            <input value="Housekeeping" matInput
+                                style="width: 120px;border-radius: 5px;border: 1px solid gray;">
+                        </span></mat-label>
+                    <mat-label>Department : <span style="padding-left: 10px;">
+                            <input value="Housekeeping" matInput
+                                style="width: 120px;border-radius: 5px;border: 1px solid gray;">
+                        </span></mat-label>
+                    <mat-label>Supervisor : <span style="padding-left: 10px;">
+                            <input value="S. Perera" matInput
+                                style="width: 120px;border-radius: 5px;border: 1px solid gray;">
+                        </span></mat-label>
+                </div>
+            </div>
+            <div class="card_3">
+                <div class="card_1_txt_space">
+
+                    <mat-label>Address : <span style="padding-left: 10px;">
+                            <input value="2/34, 5th Lane,Colombo" matInput
+                                style="width: 120px;border-radius: 5px;border: 1px solid gray;">
+                        </span></mat-label>
+                    <mat-label>Contact Number : <span style="padding-left: 10px;">
+                            <input value="07712345678" matInput
+                                style="width: 120px;border-radius: 5px;border: 1px solid gray;">
+                        </span></mat-label>
+                    <mat-label>Performance Grade : <span style="padding-left: 10px;">
+                            <input value="A" matInput
+                                style="width: 120px;border-radius: 5px;border: 1px solid gray;">
+                        </span></mat-label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="div_main-body">
+        <div class="div_main_2">
+            <div class="dev_table_1">
+                <div class="dev_col_1">
+                    <mat-label style="font-size: 14px;margin-bottom: 5px;">Turnover Analytics {{analyticsPeriod}}</mat-label>
+                    <mat-label style="font-size: 13px;font-weight: bold;">Turnover Rate :
+                        {{turnOverProbability}}</mat-label>
+                    <mat-label style="font-size: 13px;font-weight: bold;">Retention Period :
+                        {{relentionPeriod}}</mat-label>
+                </div>
+                <div class="dev_col_2">
+                    <div class="header_nav">
+                        <div class="header_nav_side1">
+                            <span class="txt_tbl_title">Most Impactful Turnover Drivers </span>
+                        </div>
+                        <div class="header_nav_side2">
+                            <span class="txt_tbl_title">Impact Rate</span>
+                        </div>
+                    </div>
+                    <div class="dev_col_2_body">
+                            <div class="div_tbl_row" *ngFor="let data of drivers" >
+    
+                                <div class="dev_col_2_body_side1" >
+                                    <span class="txt_tbl_body">{{data.name}}</span>
+                                </div>
+                                <div class="dev_col_2_body_side2" >
+                                    <span class="txt_tbl_body">{{data.rate}}</span>
+                                </div>
+                        
+                        </div>
+                        <div style="width: 100%;text-align: center;height: 100%;display: flex;justify-content: center;align-items: center;" *ngIf="!is_drivers_exists">
+                            No Data
+                        </div>
+                    </div>
+                </div>
+                <div class="dev_col_3">
+                    <div class="header_nav">
+                        <div class="header_nav_side">
+                            <span class="txt_tbl_title">Most Applicable Retention Measures for above Drivers </span>
+                        </div>
+                    </div>
+                    <div class="dev_col_2_body">
+                        <div class="div_tbl_row" *ngFor="let data of measures">
+                            <div class="dev_col_2_body_side">
+                                <span class="txt_tbl_body">{{data}}</span>
+                            </div>
+                        </div>
+                        <div style="width: 100%;text-align: center;height: 100%;display: flex;justify-content: center;align-items: center;" *ngIf="!is_drivers_exists">
+                            No Data
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="div_main_3">
+            <div class="div_main_3_tbl1">
+                <div class="dev_col_1">
+                    <mat-label style="font-size: 13px;margin-bottom: 5px;">Previous Evaluation {{prev_period}} vs Current Evaluation {{current_period}} </mat-label>
+                </div>
+                <div class="dev_col_2">
+                    <div class="div_content">
+                        <div class="div_content_side1">
+                            <span style="font-weight: bold; font-size: 16px;">{{rate_turnOver_prob}} </span>
+                          <mat-icon style="color: #000080;font-weight: bold;">{{arrow_icon_turnOver_prob}}</mat-icon>
+                        </div>
+                        <div class="div_content_side2">
+                            <div class="div_content_side2_row1">
+                                <span class="title_card">Turnover Probability</span>
+                            </div>
+                            <div class="div_content_side2_row2">
+                                <div class="div_content_side2_row2_div1">
+                                    <span style="font-size: 13px;">Current : {{currentRate}}</span>
+                                </div>
+                                <div class="div_content_side2_row2_div2">
+                                    <span style="font-size: 13px;">Previous : {{previousRate}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div_content">
+                        <div class="div_content_side1">
+                            <span style="font-weight: bold; font-size: 16px;"> {{year_relention_perod}}</span><mat-icon
+                                style="color: #000080;font-weight: bold;">{{arrow_icon_relention_perod}}</mat-icon>
+                        </div>
+                        <div class="div_content_side2">
+                            <div class="div_content_side2_row1">
+                                <span class="title_card">Retention Period</span>
+                            </div>
+                            <div class="div_content_side2_row2">
+                                <div class="div_content_side2_row2_div1">
+                                    <span style="font-size: 13px;">Current : {{currentYear}}</span>
+                                </div>
+                                <div class="div_content_side2_row2_div2">
+                                    <span style="font-size: 13px;">Previous : {{previousYear}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dev_col_3">
+                    <div class="div_content">
+                        <div class="div_content_side2">
+                            <div class="div_content_side2_row1">
+                                <span class="title_card">Turnover Driver impact</span>
+                                <span>(Changes in Last Evaluation's Top Turnover Drivers in Comparison to Current Evalution)</span>
+                            </div>
+                            <div class="div_content_side2_row2" >
+                                <div class="div_content_side2_row2_div1" *ngFor="let data of driverImpact" >
+                                    <span style="font-weight: bold;" *ngIf="is_prev_factors_exists">{{data.rate}} </span>
+                                    <mat-icon style="color: #000080;font-weight: bold;" *ngIf="data.is_rate_increased == true && is_prev_factors_exists">arrow_upward</mat-icon>
+                                    <mat-icon style="color: #000080;font-weight: bold;" *ngIf="data.is_rate_increased == false && is_prev_factors_exists">arrow_downward</mat-icon>
+                                    <span style="width: 80px;height:22px;background-color: #000080;color: white;font-weight: bold;border-radius: 20px;display: flex;text-align: center;justify-content: center;font-size: 13px;font-weight: 500;" *ngIf="data.is_rate_increased == null">Removed</span>
+                                    <!-- <button mat-button >Removed</button> -->
+                                    <!-- <mat-icon style="color: #000080;font-weight: bold;" >-</mat-icon> -->
+                                  <span style="margin-left: 10px"  *ngIf="is_prev_factors_exists">{{data.factor}} </span>
+                                </div>
+                                <div  style="width: 100%;text-align: center;height: 100%;display: flex;justify-content: center;align-items: center;" *ngIf="!is_prev_factors_exists">
+                                    No Data
+                                </div>
+                                
+                                <!-- <div class="div_content_side2_row2_div2">
+                                    <span style="font-weight: bold;">{{turnOverDecreaseWeekRate}} </span><mat-icon
+                                        style="color: #000080;font-weight: bold;">arrow_downward</mat-icon>
+                                  <span style="margin-left: 20px"> Decrease in Workload</span>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="div_content">
+                        <div class="div_content_side2">
+                            <div class="div_content_side2_row1">
+                                <span class="title_card">Newly Added Turnover Drivers</span>
+                            </div>
+                            <div class="div_content_side2_row2">
+                                <div class="div_content_side2_row2_div1">
+                                    <span>Job Satisfaction</span>
+                                </div>
+                                <div class="div_content_side2_row2_div2">
+                                    <span>Supervisor Relationship</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="div_main_3_tbl2">
+                <div class="dev_col_1">
+                    <mat-label style="font-size: 14px;margin-bottom: 5px;">Retention Progress Notes</mat-label>
+                </div>
+                <div class="dev_col_2">
+                    <div class="div_content_notes">
+                        <div style="width: 97%; height: 98%;">{{employeeModel.note}}</div>
+                        <!-- <mat-icon class="btn_note_add" [hidden]="viewOrEditModeEnable"
+                            (click)="progressNoteDialog()">edit_note</mat-icon> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,166 @@
+.employee_main {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+
+}
+
+@font-face {
+  font-family: 'SourceSansPro';
+  src: url('../../../../../assets/fonts/SourceSansPro.ttf');
+}
+
+  .div_main_1 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    border-radius: 20px;
+    //flex-direction: column;
+    //margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    .div_main_1_title {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      overflow: hidden;
+      .txt_title {
+        font-weight: 500;
+        display: flex;
+        padding-top: 10px;
+        padding-left: 20px;
+      }
+    }
+
+    .div_profile {
+      width: 100%;
+      height: 120px;
+      //background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .div_circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: transparent;
+        //margin-left: 150px;
+      }
+    }
+    .div_details {
+      width: 650px;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      .side_1 {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+      }
+      .side_2 {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+      }
+    }
+    .div_button {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      //background-color: blue;
+      .div_btn {
+        width: 240px;
+        height: 100%;
+        //margin-left: 400px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .btn_cancel {
+          width: 110px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          min-height: 27px;
+          color: #000080;
+          border: 1px solid #000080;
+          background-color: white;
+          border-radius: 20px;
+          font-size: 14px;
+        }
+        .btn_submit {
+          width: 110px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          min-height: 27px;
+          color: white;
+          background-color: #000080;
+          border-radius: 20px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+
+@media screen and (max-width: 1080px) {
+  .employee_main {
+    height: 100% !important;
+    overflow: scroll;
+  }
+
+  .div_main_1 {
+    flex-direction: column !important;
+    height: auto !important;
+    margin: 0 !important;
+
+    .div_main_1_title {
+
+      .txt_title {
+        font-size: 11px;
+      }
+    }
+
+  }
+  .div_details {
+    flex-direction: column !important;
+  }
+
+  .side_2 {
+    align-items: center !important;
+
+  }
+}
+
+::ng-deep .mat-calendar-body-selected {
+  background-color: #000080;
+  color: white;
+}
+::ng-deep  .mat-icon-button {
+  color: #000080;
+}

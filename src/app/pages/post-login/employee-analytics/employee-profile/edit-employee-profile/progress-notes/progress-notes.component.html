@@ -1,0 +1,18 @@
+<button class="close" mat-button (click)="onClose()">
+    <mat-icon class="close-icon" color="primary">close</mat-icon>
+</button>
+<div class="div_dialog_main" >
+    <!-- <div class="btn-close" >
+    </div> -->
+    <div style="width: 100%;display: flex;justify-content:center;align-items: center;">
+        <span class="txt_title">Retention Progress Notes</span>
+    </div>
+    <div class="div_txt_area">
+        <textarea class="txt_area" [formControl]="notesControl"
+        [(ngModel)]="note"></textarea>
+    </div>
+    <div class="div_btn_area">
+        <button mat-button class="btn_cancel" [mat-dialog-close]="true">Cancel</button>
+        <button mat-button class="btn_save" (click)="notesUpdate()">Save</button>
+    </div>
+</div>

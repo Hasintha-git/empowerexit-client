@@ -1,0 +1,381 @@
+@font-face {
+    font-family: 'SourceSansPro';
+    src: url('../../../../assets/fonts/SourceSansPro.ttf');
+  }
+.main_dev {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+    background-color: #E6E6FA;
+
+    .div_slider_box {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+//login form side css >>>>>>>>>>>>
+.side_1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    overflow: hidden;
+    .side_box {
+      width: 60%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 20px;
+
+      //ultra small
+      .q_box_1_small {
+        width: 100%;
+        height: auto;
+        max-height: 95px;
+        background-color: white;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        padding: 5px;
+        padding-top: 5px;
+        padding-bottom: 10px;
+
+        .q_box_1_header{
+          width: 90%;
+          height: 50px;
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          font-family: 'SourceSansPro';
+          .txt_title {
+            font-weight: 500;
+          }
+
+        }
+        .q_box_1_body {
+          width: 90%;
+          height: 100px;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: start;
+          flex-direction: column;
+          .input_field {
+            width: 250px;
+            border-radius: 5px;
+            outline: transparent;
+            border: 1px solid gray;
+            height: 37px;
+            font-size: 13px;
+            padding-left: 10px;
+          }
+          .radio_stl {
+            font-family: 'SourceSansPro';
+            width: 200px;
+            font-size: 10px;
+          }
+        }
+        .q_box_1_des {
+          width: 90%;
+          height: auto;
+          margin-top: 10px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: start;
+          flex-direction: column;
+          text-align: start;
+
+          .txt_des {
+            font-family: 'SourceSansPro';
+          }
+        }
+      }
+
+
+      //small
+      .q_box_1 {
+        width: 100%;
+        height: auto !important;
+        max-height: 160px;
+        background-color: white;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        padding: 5px;
+        padding-bottom: 10px;
+        .q_box_1_header{
+          width: 90%;
+          height: 50px;
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          font-family: 'SourceSansPro';
+          .txt_title {
+            font-weight: 500;
+          }
+        }
+        .q_box_1_body {
+          width: 90%;
+          height: 100px;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: start;
+          flex-direction: column;
+
+          .radio_stl {
+            font-family: 'SourceSansPro';
+            width: 200px;
+          }
+        }
+        .q_box_1_des {
+          width: 90%;
+          height: auto;
+          margin-top: 10px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: start;
+          flex-direction: column;
+          text-align: start;
+
+          .txt_des {
+            font-family: 'SourceSansPro';
+          }
+        }
+      }
+
+         //small 3
+         .q_box_3 {
+          width: 100%;
+          height: auto !important;
+          max-height: 140px;
+          background-color: white;
+          border-radius: 10px;
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-direction: column;
+          padding: 5px;
+          padding-bottom: 10px;
+          .q_box_3_header{
+            width: 90%;
+            height: 50px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            font-family: 'SourceSansPro';
+            .txt_title {
+              font-weight: 500;
+            }
+          }
+          .q_box_1_body {
+            width: 90%;
+            height: 100px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: start;
+            flex-direction: column;
+  
+            .radio_stl {
+              font-family: 'SourceSansPro';
+              width: 200px;
+            }
+          }
+          .q_box_1_des {
+            width: 90%;
+            height: auto;
+            margin-top: 10px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: start;
+            flex-direction: column;
+            text-align: start;
+  
+            .txt_des {
+              font-family: 'SourceSansPro';
+            }
+          }
+        }
+
+      //medium
+      .q_box_1_max {
+        width: 100%;
+        height: auto;
+        max-height: 210px;
+        background-color: white;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        padding: 5px;
+        padding-bottom: 10px;
+        .q_box_1_header{
+          width: 90%;
+          height: 50px;
+          display: flex;
+          justify-content: start;
+          align-items: center;
+          font-family: 'SourceSansPro';
+          .txt_title {
+            font-weight: 500;
+          }
+        }
+        .q_box_1_body {
+          width: 90%;
+          height: 150px;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: start;
+          flex-direction: column;
+
+          .radio_stl {
+            font-family: 'SourceSansPro';
+            width: 200px;
+          }
+        }
+
+      }
+
+      // des box
+      .q_box_1_des {
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        padding: 5px;
+        padding-bottom: 10px;
+        .q_box_1_des_div {
+          width: 90%;
+          height: auto;
+          margin-top: 10px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: start;
+          flex-direction: column;
+          text-align: start;
+
+          .txt_des {
+            font-family: 'SourceSansPro';
+          }
+        }
+      }
+
+      // rate box
+      .q_box_1_rate {
+        width: 100%;
+        height: auto;
+        background-color: white;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        padding: 5px;
+        padding-bottom: 10px;
+        .q_box_1_div_main {
+          width: 90%;
+          height: 40px;
+          display: flex;
+          flex-direction: row;
+
+          .q_box_1_div_main_1 {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            text-align: start;
+            .txt_title {
+              font-family: 'SourceSansPro';
+              font-weight: 500;
+            }
+          }
+
+          .q_box_1_div_main_2 {
+            width: 10%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+          }
+        }
+      }
+    }
+}
+
+
+.btn_section {
+  width: 60%;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.btn_share {
+    width: 200px;
+    background-color: #000080;
+    color:white;
+    border-radius: 20px;
+}
+
+.title_bar {
+  width: 60%;
+  height: 50px;
+  background-color: #000080;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+:host ::ng-deep .mat-radio-container{
+  height: 13px;
+  width: 13px;
+}
+:host ::ng-deep .mat-radio-outer-circle{
+  height: 13px;
+  width: 13px;
+}
+:host ::ng-deep .mat-radio-inner-circle{
+  height: 13px;
+  width: 13px;
+}
+:host ::ng-deep .mat-radio-button .mat-radio-ripple{
+  height: 20px; /*double of your required circle radius*/
+  width: 20px;  /*double of your required circle radius*/
+  left: calc(50% - 13px); /*'10px'-same as your required circle radius*/
+  top: calc(50% - 13px); /*'10px'-same as your required circle radius*/
+}

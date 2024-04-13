@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'SourceSansPro';
+    src: url('../../../../assets/fonts/SourceSansPro.ttf');
+}
+
+.div_dialog_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 450px;
+    height: 80px;
+    padding: 0;
+
+    .txt_title {
+        padding-bottom: 20px;
+        font-size: 16px;
+        font-family: 'SourceSansPro';
+        font-weight: bold;
+    }
+}
+
+.div_content {
+    width: 90%;
+    height: 33px;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .div_txt_area{
+        width: 90%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .div_btn_area{
+        width: 10%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .btn_copy {
+            color: gray;
+            cursor: pointer;
+        }
+    }
+}
+
+.close {
+    background-color: transparent !important;
+    position: absolute; top:6px; right: 10px; 
+    cursor: pointer;
+}
+
+
+.close-icon {
+    transition: 1s ease-in-out;
+    
+}
+
+.close-icon:hover {
+    transform: rotate(180deg);
+}
+
+::ng-deep .icon-outside .close {
+    float: right;
+    top: -52px;
+    right: -52px;
+}
+
+::ng-deep .icon-outside .mat-dialog-container {
+    overflow: unset
+}
+
+.my-dialog .mat-dialog-container {
+    border-radius: 20px !important;
+    height: auto;
+ }

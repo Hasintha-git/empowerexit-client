@@ -1,0 +1,14 @@
+<button class="close"  (click)="onClose()">
+    <mat-icon class="close-icon" color="primary">close</mat-icon>
+</button>
+<div class="div_dialog_main" >
+    <!-- <div class="btn-close" >
+    </div> -->
+    <div style="width: 100%;display: flex;justify-content:start;align-items: center;">
+        <span class="txt_title">Are you sure you want to delete employee </span>
+    </div>
+    <div class="div_btn_area">
+        <button mat-button class="btn_cancel" [mat-dialog-close]="true">Cancel</button>
+        <button mat-button class="btn_save" (click)="confirmDelete()">Confirm</button>
+    </div>
+</div>

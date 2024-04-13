@@ -1,0 +1,45 @@
+<div class="departmental_main">
+    <div class="div_main_1">
+        <div class="div_main_1_title">
+            <span class="txt_title">Department wise Statistics for Latest Evaluation : {{latest_eva_date}}</span>
+            <!-- <span class="txt_sub">Next Evaluation Date: </span> -->
+        </div>
+        <div class="div_main_1_body">
+            <div class="card_1">
+                <mat-label style="font-size: 13px;text-align: center;">Department with Highest Grade A Performer <br> Turnover Rate</mat-label>
+                <span style="font-weight: bold; font-size: 18px;">{{highest_gradeA_dept}}</span>
+            </div>
+            <div class="card_2">
+                <mat-label style="font-size: 13px;text-align: start;">Department with Highest Average Turnover Rate</mat-label>
+                <br>
+                <span style="font-weight: bold; font-size: 18px;">{{highest_dept}}</span>
+            </div>
+            <div class="card_3">
+                <mat-label style="font-size: 13px;text-align: start;">Department with Lowest Average Turnover Rate</mat-label>
+                <br>
+                <span style="font-weight: bold;font-size: 18px;">{{lowest_dept}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="div_main_2">
+        <div class="dev_table_1" *ngFor="let data of chart_data; let i = index">
+            <div class="dev_table_1_div1">
+              <mat-label class="lbl_title_header">{{data[0]}}</mat-label>
+              <div class="dev_table_1_div1_row2">
+                <mat-label class="lbl_headline">Total Employees: {{data[1]}}</mat-label>
+                <mat-label class="lbl_headline">Total Predicted Avg Turnover Rate:  {{data[2]}}</mat-label>
+              </div>
+            </div>
+            <div class="dev_table_1_div2">
+              <div style="display: flex;width: 95%; height: 250px;justify-content: center;align-items: center" class="chart1">
+                <!-- Assign a unique ID to each canvas element using the index -->
+                <canvas [attr.id]="'chart' + i"></canvas>
+              </div>
+              
+            </div>
+            <mat-label class="lbl_headline" > {{data[3]}}</mat-label>
+
+          </div>
+          
+    </div>
+</div>

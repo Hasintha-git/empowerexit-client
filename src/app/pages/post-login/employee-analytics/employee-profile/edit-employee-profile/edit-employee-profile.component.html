@@ -1,0 +1,106 @@
+<form class="profile_main"  (ngSubmit)="onSubmit()" [formGroup]="editEmployeeForm">
+    <div class="header-btn-section">
+            <button mat-flat-button type="submit" [routerLink]="['/post-login/employee-analytics/employee-profile']"  [queryParams]="{ id: employeeModel.id}" class="btn-header" >
+                View Profile</button>
+        <button  mat-flat-button  type="button" class="btn-header" (click)="deleteEmployee()">
+            Delete Profile</button>
+    </div>
+
+    <div class="div_main_1">
+
+        <div class="div_main_1_body">
+            <div class="card_1">
+                <div class="card_1_side1">
+                    <div class="profile_img_div">
+                      <img style="width: 100%;height: 100%;" src="../../../../../../assets/icons/user.png" alt="">
+                    </div>
+                </div>
+                <div class="card_1_txt_space">
+
+                    <mat-label>Employee Id : <span style="padding-left: 10px;">
+                            <input value="AB1234" matInput formControlName="emp_id" [(ngModel)]="employeeModel.emp_id"
+                                   class="input_field_data">
+                        </span></mat-label>
+
+                    <mat-label>Name : <span style="padding-left: 10px;">
+                            <input value="A.D Silva" matInput formControlName="name" [(ngModel)]="employeeModel.name"
+                                   class="input_field_data">
+                        </span></mat-label>
+                    <mat-label>Joined On : <span style="padding-left: 10px;">
+                            <input matInput formControlName="joined_date" [(ngModel)]="employeeModel.joined_date"
+                                   class="input_field_data">
+                        </span></mat-label>
+                </div>
+            </div>
+            <div class="card_2">
+                <div class="card_1_txt_space">
+
+                    <mat-label>Designation : <span style="padding-left: 10px;">
+                            <input value="Housekeeping" matInput formControlName="designation" [(ngModel)]="employeeModel.designation"
+                                class="input_field_data">
+                        </span></mat-label>
+                    <mat-label>Department : <span style="padding-left: 10px;">
+                            <!-- <input value="Housekeeping" matInput formControlName="department_id" [(ngModel)]="employeeModel.department_id"
+                                   class="input_field_data"> -->
+                                   <mat-select class="input_field_data" multiple="false" formControlName="department_id" [(ngModel)]="employeeModel.department_code">
+                                    <mat-option class="mat-select-txt" *ngFor="let st of DepartmentList" [value]="st.value">
+                                      {{st.name}}
+                                  </mat-option>
+                                  </mat-select>
+                        </span></mat-label>
+                    <mat-label>Supervisor : <span style="padding-left: 10px;">
+                            <input value="S. Perera" matInput formControlName="supervisor" [(ngModel)]="employeeModel.supervisor"
+                                   class="input_field_data">
+                        </span></mat-label>
+                </div>
+            </div>
+            <div class="card_3">
+                <div class="card_1_txt_space">
+
+                    <mat-label>Address : <span style="padding-left: 10px;">
+                            <input value="2/34, 5th Lane,Colombo" matInput matInput formControlName="address"
+                            [(ngModel)]="employeeModel.address"
+                                   class="input_field_data">
+                        </span></mat-label>
+                    <mat-label>Contact Number : <span style="padding-left: 10px;">
+                            <input value="07712345678" matInput formControlName="contact" [(ngModel)]="employeeModel.contact"
+                                   class="input_field_data">
+                        </span></mat-label>
+                    <mat-label>Performance Grade : <span style="padding-left: 10px;">
+                                   <mat-select multiple="false" formControlName="performance_grade"
+                                   [(ngModel)]="employeeModel.performance_grade" class="input_field_data">
+                                   <mat-option  *ngFor="let st of PerformanceList" [value]="st.value">
+                                     {{st.name}}
+                                 </mat-option>
+                                 </mat-select>
+                        </span></mat-label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="div_main-body">
+        <div class="div_main_3">
+
+            <div class="div_main_3_tbl2">
+                <div class="dev_col_1">
+                    <mat-label class="txt_notes_title">Retention Progress Notes</mat-label>
+                </div>
+                <div class="dev_col_2">
+                    <div class="div_content_notes">
+                        <textarea style="width: 95%;height: 80%;border:none;outline: none;resize: none;background-color: transparent;" formControlName="notes" [(ngModel)]="employeeModel.note"></textarea>
+                        <!-- <mat-icon class="btn_note_add"
+                            (click)="progressNoteDialog()">edit_note</mat-icon> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+  <div class="div_button">
+    <div class="div_btn">
+      <button mat-button class="btn_cancel" [routerLink]="['/post-login/employee-analytics/employee-profile']" [queryParams]="{ id: employeeId }">Cancel</button>
+      <button mat-button class="btn_submit" type="submit">Save</button>
+    </div>
+  </div>
+</form>

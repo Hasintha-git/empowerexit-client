@@ -1,0 +1,20 @@
+<div class="close" (click)="onClose()">
+            <mat-icon class="close-icon" color="primary">close</mat-icon>
+</div>
+<div class="div_dialog_main" >
+    <div style="width: 100%;display: flex;justify-content:center;align-items: center;">
+        <span class="txt_title">Share Survey </span>
+    </div>
+
+    <div class="div_content">
+
+        <div class="div_txt_area">
+            <input placeholder="Survey URL" [disabled]="true" [(ngModel)]="shareSurveyLink" type="text" style="width: 100%;background-color: transparent; outline: none; border: none;">
+        </div>
+
+        <div  [cdkCopyToClipboard]="shareSurveyLink" (click)="copied()" class="div_btn_area" style="border-left: 1px solid gray;">
+            <mat-icon class="btn_copy">content_copy</mat-icon>
+        </div>
+    </div>
+
+</div>

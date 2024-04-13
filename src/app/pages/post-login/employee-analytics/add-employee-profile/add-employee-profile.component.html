@@ -1,0 +1,120 @@
+<div class="employee_main">
+  <div class="div_main_1">
+    <form class="example-form" (ngSubmit)="onSubmit()" [formGroup]="employeeForm">
+      <div class="div_profile">
+        <div class="div_circle">
+          <img style="width: 100%;height: 100%;" src="../../../../../../assets/icons/user.png" alt="">
+        </div>
+      </div>
+      <div class="div_details">
+        <div class="side_1">
+          <mat-form-field class="example-full-width">
+            <mat-label>Employee Id</mat-label>
+            <input matInput formControlName="emp_id" [(ngModel)]="employeeModel.emp_id">
+            <mat-error *ngIf="emp_id?.hasError('required')">Employee Id cannot be empty
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Employee Name</mat-label>
+            <input matInput formControlName="name" [(ngModel)]="employeeModel.name">
+            <mat-error *ngIf="name?.hasError('required')">Employee Name cannot be empty
+            </mat-error>
+          </mat-form-field>
+
+          <!-- <mat-form-field class="example-full-width">
+            <mat-label>Joined Date</mat-label>
+            <input matInput formControlName="joined_date" placeholder="year-month-day" [(ngModel)]="employeeModel.joined_date">
+            <mat-error *ngIf="joined_date?.hasError('required')">Joined Date cannot be empty
+            </mat-error>
+          </mat-form-field> -->
+
+          <!-- <mat-form-field  class="example-full-width" >
+            <mat-label>Joined Date</mat-label>
+            <input matInput [matDatepicker]="picker"  formControlName="joined_date" [(ngModel)]="employeeModel.joined_date">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="joined_date?.hasError('required')">Joined Date cannot be empty
+            </mat-error>
+          </mat-form-field> -->
+        
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Designation</mat-label>
+            <input matInput formControlName="designation" [(ngModel)]="employeeModel.designation">
+            <mat-error *ngIf="designation?.hasError('required')">Designation cannot be empty
+            </mat-error>
+          </mat-form-field>
+
+
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Department</mat-label>
+            <mat-select multiple="false" formControlName="department_id" [(ngModel)]="employeeModel.department_id">
+            <mat-option class="mat-select-txt" *ngFor="let st of DepartmentList" [value]="st.value">
+              {{st.name}}
+          </mat-option>
+          </mat-select>
+          <mat-error *ngIf="department_id?.hasError('required')">Department cannot be empty
+          </mat-error>
+          </mat-form-field>
+
+                    
+          <mat-form-field class="example-full-width">
+            <mat-label>Performance Grade</mat-label>
+            <mat-select multiple="false" formControlName="performance_grade"
+              [(ngModel)]="employeeModel.performance_grade">
+              <mat-option class="mat-select-txt" *ngFor="let st of PerformanceList" [value]="st.value">
+                {{st.name}}
+            </mat-option>
+            </mat-select>
+            <mat-error *ngIf="performance_grade?.hasError('required')">Performance Grade cannot be empty
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="side_2">
+
+
+          <mat-form-field  class="example-full-width">
+            <mat-label>Address</mat-label>
+            <textarea style="height: 85px" matInput formControlName="address"
+              [(ngModel)]="employeeModel.address"></textarea>
+              <mat-error *ngIf="address?.hasError('required')">Address cannot be empty
+              </mat-error>
+          </mat-form-field>
+
+
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Supervisor Name</mat-label>
+            <input matInput formControlName="supervisor" [(ngModel)]="employeeModel.supervisor">
+            <mat-error *ngIf="supervisor?.hasError('required')">Supervisor Name cannot be empty
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Contact Number</mat-label>
+            <input matInput formControlName="contact" [(ngModel)]="employeeModel.contact" maxlength="10">
+            <mat-error *ngIf="contact?.hasError('required')">Contact Number cannot be empty
+            </mat-error>
+          </mat-form-field>
+          
+          <mat-form-field class="example-full-width" style="width: 185px;">
+            <input matInput  formControlName="joined_date" [(ngModel)]="employeeModel.joined_date" [matDatepicker]="myDatepicker"  placeholder="Joined Date">
+            <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker></mat-datepicker>
+            <mat-error *ngIf="joined_date?.hasError('required')">Joined Date cannot be empty
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="div_button">
+        <div class="div_btn">
+          <button mat-button class="btn_cancel" [routerLink]="['/post-login/employee-analytics']">Cancel</button>
+          <button mat-button class="btn_submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

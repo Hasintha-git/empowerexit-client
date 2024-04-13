@@ -1,0 +1,219 @@
+<div class="employee_main">
+    <div  style="width: 100%;padding: 15px;padding-bottom: 20px;padding-top: 20px">
+        <div class="col w-100 header-main">
+
+            <div class="col h-25  position-relative">
+                <div class="position-absolute top-0 end-0 button-section"  >
+                    <button (click)="reportDownload()" style="margin-right: 10px" mat-button
+                        class="btn_add_new">
+                        <mat-icon>download</mat-icon>
+                <span>Download Report</span></button>
+                <mat-icon class="btn_add_new_mobile" (click)="reportDownload()">download</mat-icon>
+                  <button mat-icon-button  routerLink="add-employee"
+                          class="btn_add_new"><mat-icon >add</mat-icon>
+                    Add New Employee</button>
+                    <mat-icon class="btn_add_new_mobile" routerLink="add-employee">add</mat-icon>
+                </div>
+            </div>
+            <div class="col h-25 position-relative">
+                <div class="position-absolute top-0 start-0">
+                    <span class="txt_title">Turnover Statistics for Latest Evaluations</span>
+                </div>
+            </div>
+
+
+        </div>
+      <mat-form-field class="example-full-width input_search" >
+        <input type="tel" matInput placeholder="Search by Employee ID" (change)="emp_id_search()" [formControl]="emp_idController" [(ngModel)]="emp_id">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+            <div class="col ">
+                <div class=" text-left">
+                    <div class="row" style="display: flex;">
+                        <!-- <form  [formGroup]="searchList"> -->
+                        <div class="col " style="padding: 0;max-width: 170px;">
+                            <mat-form-field appearance="outline" style="width: 160px;" class="list1Dropdown">
+                                <mat-select class="list1Select" multiple="true" placeholder="Department" [formControl]="statusList1"
+                                    [(ngModel)]="detailsList1"
+                                    class="mat-select">
+                                    <mat-option class="mat-select-txt" *ngFor="let st of List1" [value]="st.id" (click)="list1Change()">
+                                        {{st.name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+
+                        <div class="col" style="padding: 0;max-width: 170px;">
+                            <mat-form-field appearance="outline" style="width: 160px;" class="list1Dropdown">
+                                <mat-select multiple="true" placeholder="Performance Grade" [formControl]="statusList2"
+                                    [(ngModel)]="detailsList2"
+                                            class="mat-select">
+                                    <mat-option class="mat-select-txt" *ngFor="let st of List2" [value]="st.value" (click)="list2Change()">
+                                        {{st.name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col" style="padding: 0;max-width: 170px;">
+                            <mat-form-field appearance="outline" style="width: 160px;" class="list1Dropdown">
+                                <mat-select multiple="true" placeholder="Retention Period" [formControl]="statusList3"
+                                    [(ngModel)]="detailsList3"
+                                            class="mat-select">
+                                  <mat-option class="mat-select-txt" *ngFor="let st of List3" [value]="st.id" (click)="list3Change()">
+                                    {{st.name}}
+                                  </mat-option>
+
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col" style="padding: 0;max-width: 170px;">
+                            <mat-form-field appearance="outline" style="width: 160px;" class="list1Dropdown">
+                                <mat-select multiple="true" placeholder="Turnover Rate" [formControl]="statusList4"
+                                    [(ngModel)]="detailsList4"
+                                            class="mat-select">
+                                    <mat-option class="mat-select-txt" *ngFor="let st of List4" [value]="st.id" (click)="list4Change()">
+                                        {{st.name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <!-- </form> -->
+                    </div>
+                    <div class="row " style="height:100%;">
+                        <div class="col" style="padding: 0;">
+                            <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
+                                <mat-chip
+                                    style=" color:gray;background-color: white;border: 1px solid gainsboro;font-weight: 200;font-size: 12px;"
+                                    class="example-box" cdkDrag *ngFor="let data of detailsList1"
+                                    (removed)="remove1(data)">
+                                    {{List1[data-1].name}}
+                                    <button matChipRemove [attr.aria-label]="'remove ' + data">
+                                        <mat-icon>cancel</mat-icon>
+                                    </button>
+                                </mat-chip>
+                                <mat-chip
+                                    style=" color:gray;background-color: white;border: 1px solid gainsboro;font-weight: 200;font-size: 12px;"
+                                    class="example-box" cdkDrag *ngFor="let data of detailsList2"
+                                    (removed)="remove2(data)">
+                                    {{data}}
+                                    <button matChipRemove [attr.aria-label]="'remove ' + data">
+                                        <mat-icon>cancel</mat-icon>
+                                    </button>
+                                </mat-chip>
+                                <mat-chip
+                                    style=" color:gray;background-color: white;border: 1px solid gainsboro;font-weight: 200;font-size: 12px;"
+                                    class="example-box" cdkDrag *ngFor="let data of detailsList3"
+                                    (removed)="remove3(data)">
+                                    {{List3[data-1].name}}
+                                    <button matChipRemove [attr.aria-label]="'remove ' + data">
+                                        <mat-icon>cancel</mat-icon>
+                                    </button>
+                                </mat-chip>
+                                <mat-chip
+                                    style=" color:gray;background-color: white;border: 1px solid gainsboro;font-weight: 200;font-size: 12px;"
+                                    class="example-box" cdkDrag *ngFor="let data of detailsList4"
+                                    (removed)="remove4(data)">
+                                    {{List4[data-1].name}}
+                                    <button matChipRemove [attr.aria-label]="'remove ' + data">
+                                        <mat-icon>cancel</mat-icon>
+                                    </button>
+                                </mat-chip>
+                            </mat-chip-list>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        <div class="col">
+            <div class="col w-100" style="height: 20px;">
+            </div>
+
+            <div class="col w-90" class="div_table">
+                <table #dataBlock mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
+
+                    <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="employeeId">
+                        <th mat-header-cell *matHeaderCellDef class="tbl_header_txt_start"> Employee Id</th>
+                        <td mat-cell *matCellDef="let element" class="tbl_row_start"> {{element.emp_id}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="employeeName">
+                        <th mat-header-cell *matHeaderCellDef class="tbl_header_txt_start"> Employee Name </th>
+                        <td mat-cell *matCellDef="let element" class="tbl_row_start"> {{element.name}} </td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="department">
+                        <th mat-header-cell *matHeaderCellDef class="tbl_header_txt_start"> Department </th>
+                        <td mat-cell *matCellDef="let element" class="tbl_row_start"> {{element.department}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="performance">
+                        <th mat-header-cell *matHeaderCellDef class="tbl_header_txt_center"> Performance Grade</th>
+                        <td mat-cell *matCellDef="let element" class="tbl_row_center"> {{element.performance}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="turnOverProbability">
+                        <th mat-header-cell *matHeaderCellDef class="tbl_header_txt_center"> Turnover
+                            Rate </th>
+                        <td mat-cell *matCellDef="let element" class="tbl_row_center"> {{element.probability}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="reteintionPeriod">
+                        <th mat-header-cell *matHeaderCellDef  class="tbl_header_txt_center"> Retention Period
+                        </th>
+                        <td mat-cell *matCellDef="let element" class="tbl_row_center"> {{element.period}} </td>
+                    </ng-container>
+                    <!-- Position Column -->
+                    <!-- <ng-container matColumnDef="action">
+                        <th mat-header-cell *matHeaderCellDef sticky style="color: white;"> Action</th>
+                        <td mat-cell *matCellDef="let element"> <mat-icon>add</mat-icon> </td>
+                        <td mat-cell *matCellDef="let element"> <mat-icon>add</mat-icon> </td>
+                    </ng-container> -->
+
+                    <ng-container matColumnDef="action" sticky>
+                        <th mat-header-cell *matHeaderCellDef></th>
+                        <td mat-cell *matCellDef="let element" class="table-action-buttons-column tbl_row_end"
+                            style="width: 140px;">
+                            <a class="table-action-buttons-column" routerLink="employee-profile" [queryParams]="{ id: element.id }" title="View" style="padding-right: 10px;color: rgb(73, 73, 73);">
+                                <!--<mat-icon style="font-size: 17px;">visibility</mat-icon>-->
+                              <img style="width: 18px;" src="../../../../assets/icons/view.png" alt="">
+                            </a>
+
+                            <a class="table-action-buttons-column" routerLink="employee-profile/edit-employee-profile" [queryParams]="{ id: element.id }" title="Edit" style="padding-right: 10px;color: rgb(73, 73, 73);;">
+                              <img style="width: 18px;" src="../../../../assets/icons/edit.png"  alt="">
+                            </a>
+                            <!-- <a class="table-action-buttons-column" title="Delete" (click)="deleteEmployee(element.id)" style="padding-right: 10px;color: rgb(73, 73, 73);">
+                              <img style="width: 18px;" src="../../../../assets/icons/delete.png" alt="">
+                            </a> -->
+                        </td>
+                    </ng-container>
+
+                    <!-- <div style="background-color: rebeccapurple;" class="table-no-data" *ngIf="dataSource.length == 0">No records found</div> -->
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"
+                        style="background-color: #000080;height: 40px;">
+                    </tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    
+                </table>
+
+
+
+            </div>
+            <div class="table-no-data" style="width: 99.8%;display: flex;text-align: center;justify-content: center;align-items: center;background-color: rgb(255, 244, 244);height: 40px;" *ngIf="dataSource.length == 0">No records found</div>
+        </div>
+
+    </div>
+
+</div>

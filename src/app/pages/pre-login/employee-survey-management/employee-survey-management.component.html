@@ -1,0 +1,538 @@
+<div class="main_dev">
+  <div class="div_slider_box">
+    <form class="side_1" (ngSubmit)="onSubmit()" [formGroup]="employeeForm">
+      <div class="title_bar">
+        <span style="font-weight: 500">Employee Survey</span>
+      </div>
+      <div class="side_box">
+        <!--card-1-->
+        <div class="q_box_1_small">
+          <div class="q_box_1_header">
+            <span class="txt_title" >Employee ID</span>
+          </div>
+          <div class="q_box_1_body">
+            <!--<mat-form-field class="example-full-width " appearance="outline">-->
+              <input type="Emp ID" matInput  class="input_field" placeholder="employee id here" formControlName="emp_id" [(ngModel)]="surveyModel.emp_id">
+            <!--</mat-form-field>-->
+            <mat-error *ngIf="employeeForm.get('emp_id').invalid && employeeForm.get('emp_id').touched" style="font-size: 11px;font-weight: 500;">EMP ID cannot be empty
+            </mat-error>
+  
+          </div>
+        </div>
+        <!--card-1-->
+        <div class="q_box_1">
+          <div class="q_box_1_header">
+            <span class="txt_title">Age Category</span>
+          </div>
+          <!-- <div > -->
+          <mat-radio-group class="q_box_1_body" formControlName="age" [(ngModel)]="surveyModel.age">
+            <mat-radio-button class="radio_stl" value="4">Below 20</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="1">20-30</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="2">30-40</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="3">Above 40</mat-radio-button>
+            <mat-error *ngIf="employeeForm.get('age').invalid && employeeForm.get('age').touched" style="font-size: 11px;font-weight: 500;">Age cannot be empty
+            </mat-error>
+          </mat-radio-group>
+          
+          <!-- </div> -->
+        </div>
+        <!--card-2-->
+        <div class="q_box_3">
+          <div class="q_box_3_header">
+            <span class="txt_title">Gender</span>
+          </div>
+          <mat-radio-group class="q_box_1_body" formControlName="gender" [(ngModel)]="surveyModel.gender">
+            <mat-radio-button class="radio_stl" value="1">Male</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="2">Female</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="3">Other</mat-radio-button>
+            <mat-error *ngIf="employeeForm.get('gender').invalid && employeeForm.get('gender').touched" style="font-size: 11px;font-weight: 500;">gender cannot be empty
+            </mat-error>
+          </mat-radio-group>
+        </div>
+         <!--card-education -->
+         <div class="q_box_1_max">
+          <div class="q_box_1_header">
+            <span class="txt_title">Educational Status</span>
+          </div>
+          <mat-radio-group class="q_box_1_body" formControlName="educational_status" [(ngModel)]="surveyModel.educational_status">
+            <mat-radio-button class="radio_stl" value="1">Below O/L</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="2">O/L Passer</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="3">A/L Passer</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="4">Diploma Holder</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="5">Degree Holder</mat-radio-button>
+            <mat-error *ngIf="employeeForm.get('educational_status').invalid && employeeForm.get('educational_status').touched" style="font-size: 11px;font-weight: 500;">Educational Status cannot be empty
+            </mat-error>
+          </mat-radio-group>
+        </div>
+        <!--card-3-->
+        <div class="q_box_1">
+          <div class="q_box_1_header">
+            <span class="txt_title">Marital Status</span>
+          </div>
+          <mat-radio-group class="q_box_1_body" formControlName="marital_status" [(ngModel)]="surveyModel.marital_status">
+            <mat-radio-button class="radio_stl" value="3">Single</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="2">Married without Children</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="1">Married with Children</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="4">Other</mat-radio-button>
+            <mat-error *ngIf="employeeForm.get('marital_status').invalid && employeeForm.get('marital_status').touched" style="font-size: 11px;font-weight: 500;">Marital Status cannot be empty
+            </mat-error>
+          </mat-radio-group>
+        </div>
+        <!--card-4-->
+        <div class="q_box_1_max">
+          <div class="q_box_1_header">
+            <span class="txt_title">Total Years in Hotel industry</span>
+          </div>
+          <mat-radio-group class="q_box_1_body" formControlName="total_years_industry" [(ngModel)]="surveyModel.total_years_industry">
+            <mat-radio-button class="radio_stl" value="1">Less than 1 year</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="2">1-3 years</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="3">3-5 years</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="4">5-10 years</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="5">10-15 years</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="6">15 years and above</mat-radio-button>
+            <mat-error *ngIf="employeeForm.get('total_years_industry').invalid && employeeForm.get('total_years_industry').touched" style="font-size: 11px;font-weight: 500;">Total Years in Hotel industry cannot be empty
+            </mat-error>
+          </mat-radio-group>
+        </div>
+        <!--card-5-->
+        <div class="q_box_1_max">
+          <div class="q_box_1_header" >
+            <span class="txt_title">Years of Work Experience at Hotel</span>
+          </div>
+          <mat-radio-group class="q_box_1_body" formControlName="years_work_current_hotel" [(ngModel)]="surveyModel.years_work_current_hotel">
+            <mat-radio-button class="radio_stl" value="1">Less than 1 year</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="2">1-3 years</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="3">3-5 years</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="4">5-10 years</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="5">10-15 years</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="6">15 years and above</mat-radio-button>
+            <mat-error *ngIf="employeeForm.get('years_work_current_hotel').invalid && employeeForm.get('years_work_current_hotel').touched" style="font-size: 11px;font-weight: 500;">Years of Work Experience at Hotel cannot be empty
+            </mat-error>
+          </mat-radio-group>
+        </div>
+        <!--card-6-->
+        <div class="q_box_1_max">
+          <div class="q_box_1_header">
+            <span class="txt_title">Years in the Current Role</span>
+          </div>
+          <mat-radio-group class="q_box_1_body" formControlName="number_of_years_current_role" [(ngModel)]="surveyModel.number_of_years_current_role">
+            <mat-radio-button class="radio_stl" value="1">Less than 1 year</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="2">1-3 years</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="3">3-5 years</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="4">5-10 years</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="5">10-15 years</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="6">15 years and above</mat-radio-button>
+            <mat-error *ngIf="employeeForm.get('number_of_years_current_role').invalid && employeeForm.get('number_of_years_current_role').touched" style="font-size: 11px;font-weight: 500;">Years in the Current Role cannot be empty
+            </mat-error>
+          </mat-radio-group>
+        </div>
+
+        <!--des-->
+        <div class="q_box_1_des">
+          <div class="q_box_1_des_div">
+            <mat-label class="txt_des">
+              Please rate the following factors based on the impact they have on the turnover intention ( 1-very minimum impact, 2-minimum impact, 3-moderate impact, 4-high impact, 5-very high impact )
+            </mat-label>
+          </div>
+        </div>
+
+        <!--rate-->
+        <div class="q_box_1_rate">
+          <div class="q_box_1_div_main">
+            <div class="q_box_1_div_main_1"></div>
+            <div class="q_box_1_div_main_2">1</div>
+            <div class="q_box_1_div_main_2">2</div>
+            <div class="q_box_1_div_main_2">3</div>
+            <div class="q_box_1_div_main_2">4</div>
+            <div class="q_box_1_div_main_2">5</div>
+          </div>
+          <!--rate start-->
+          <mat-radio-group class="q_box_1_div_main" formControlName="working_hours" [(ngModel)]="surveyModel.working_hours">
+            <div class="q_box_1_div_main_1">
+              <span class="txt_title">Working Hours</span>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="1"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="2"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="3"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="4"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="5"></mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <div style="width: 84%;display: flex;justify-content: end;">
+            <mat-error *ngIf="employeeForm.get('working_hours').invalid && employeeForm.get('working_hours').touched" style="font-size: 11px;font-weight: 500;text-align: start;">Working Hours Cannot be empty
+            </mat-error>
+          </div>
+
+          <mat-radio-group class="q_box_1_div_main" formControlName="promotional_barriers" [(ngModel)]="surveyModel.promotional_barriers">
+            <div class="q_box_1_div_main_1">
+              <span class="txt_title">Promotional Barriers</span>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="1"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="2"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="3"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="4"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="5"></mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <div style="width: 84%;display: flex;justify-content: end;">
+            <mat-error *ngIf="employeeForm.get('promotional_barriers').invalid && employeeForm.get('promotional_barriers').touched" style="font-size: 11px;font-weight: 500;text-align: start;">Promotional Barriers Cannot be empty
+            </mat-error>
+          </div>
+
+          <mat-radio-group class="q_box_1_div_main" formControlName="work_life_balance" [(ngModel)]="surveyModel.work_life_balance">
+            <div class="q_box_1_div_main_1">
+              <span class="txt_title">Work life balance</span>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="1"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="2"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="3"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="4"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="5"></mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <div style="width: 84%;display: flex;justify-content: end;">
+            <mat-error *ngIf="employeeForm.get('work_life_balance').invalid && employeeForm.get('work_life_balance').touched" style="font-size: 11px;font-weight: 500;text-align: start;">Work Life Balance Cannot be empty
+            </mat-error>
+          </div>
+
+          <mat-radio-group class="q_box_1_div_main" formControlName="status_and_recognition" [(ngModel)]="surveyModel.status_and_recognition">
+            <div class="q_box_1_div_main_1">
+              <span class="txt_title">Status and recognition</span>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="1"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="2"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="3"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="4"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="5"></mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <div style="width: 84%;display: flex;justify-content: end;">
+            <mat-error *ngIf="employeeForm.get('status_and_recognition').invalid && employeeForm.get('status_and_recognition').touched" style="font-size: 11px;font-weight: 500;text-align: start;">Status and Recognition Cannot be empty
+            </mat-error>
+          </div>
+
+          <mat-radio-group class="q_box_1_div_main" formControlName="salary" [(ngModel)]="surveyModel.salary">
+            <div class="q_box_1_div_main_1">
+              <span class="txt_title">Monthly salary</span>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="1"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="2"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="3"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="4"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="5"></mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <div style="width: 84%;display: flex;justify-content: end;">
+            <mat-error *ngIf="employeeForm.get('salary').invalid && employeeForm.get('salary').touched" style="font-size: 11px;font-weight: 500;text-align: start;">Salary Cannot be empty
+            </mat-error>
+          </div>
+
+          <mat-radio-group class="q_box_1_div_main" formControlName="opportunities" [(ngModel)]="surveyModel.opportunities">
+            <div class="q_box_1_div_main_1">
+              <span class="txt_title">Better employment opportunities</span>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="1"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="2"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="3"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="4"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="5"></mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <div style="width: 84%;display: flex;justify-content: end;">
+            <mat-error *ngIf="employeeForm.get('opportunities').invalid && employeeForm.get('opportunities').touched" style="font-size: 11px;font-weight: 500;text-align: start;">Opportunities Cannot be empty
+            </mat-error>
+          </div>
+
+          <mat-radio-group class="q_box_1_div_main" formControlName="workload" [(ngModel)]="surveyModel.workload">
+            <div class="q_box_1_div_main_1">
+              <span class="txt_title">Workload</span>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="1"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="2"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="3"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="4"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="5"></mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <div style="width: 84%;display: flex;justify-content: end;">
+            <mat-error *ngIf="employeeForm.get('workload').invalid && employeeForm.get('workload').touched" style="font-size: 11px;font-weight: 500;text-align: start;">Workload Cannot be empty
+            </mat-error>
+          </div>
+
+          <mat-radio-group class="q_box_1_div_main" formControlName="work_environment" [(ngModel)]="surveyModel.work_environment">
+            <div class="q_box_1_div_main_1">
+              <span class="txt_title">Work environment status</span>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="1"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="2"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="3"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="4"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="5"></mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <div style="width: 84%;display: flex;justify-content: end;">
+            <mat-error *ngIf="employeeForm.get('work_environment').invalid && employeeForm.get('work_environment').touched" style="font-size: 11px;font-weight: 500;text-align: start;">Work Environment Cannot be empty
+            </mat-error>
+          </div>
+
+          <mat-radio-group class="q_box_1_div_main" formControlName="training_and_development" [(ngModel)]="surveyModel.training_and_development">
+            <div class="q_box_1_div_main_1">
+              <span class="txt_title">Training and development</span>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="1"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="2"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="3"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="4"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="5"></mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <div style="width: 84%;display: flex;justify-content: end;">
+            <mat-error *ngIf="employeeForm.get('training_and_development').invalid && employeeForm.get('training_and_development').touched" style="font-size: 11px;font-weight: 500;text-align: start;">Training and development Cannot be empty
+            </mat-error>
+          </div>
+
+          <mat-radio-group class="q_box_1_div_main" formControlName="relationship_with_colleagues" [(ngModel)]="surveyModel.relationship_with_colleagues">
+            <div class="q_box_1_div_main_1">
+              <span class="txt_title">Relationship with colleagues</span>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="1"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="2"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="3"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="4"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="5"></mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <div style="width: 84%;display: flex;justify-content: end;">
+            <mat-error *ngIf="employeeForm.get('relationship_with_colleagues').invalid && employeeForm.get('relationship_with_colleagues').touched" style="font-size: 11px;font-weight: 500;text-align: start;">Relationship With colleagues Cannot be empty
+            </mat-error>
+          </div>
+          
+          <mat-radio-group class="q_box_1_div_main" formControlName="relationship_with_supervisor" [(ngModel)]="surveyModel.relationship_with_supervisor">
+            <div class="q_box_1_div_main_1">
+              <span class="txt_title">Relationship with supervisor</span>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="1"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="2"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="3"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="4"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="5"></mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <div style="width: 84%;display: flex;justify-content: end;">
+          <mat-error *ngIf="employeeForm.get('relationship_with_supervisor').invalid && employeeForm.get('relationship_with_supervisor').touched" style="font-size: 11px;font-weight: 500;text-align: start;">Relationship With Supervisor Cannot be empty
+          </mat-error>
+        </div>
+          <mat-radio-group class="q_box_1_div_main" formControlName="job_satisfaction" [(ngModel)]="surveyModel.job_satisfaction">
+            <div class="q_box_1_div_main_1">
+              <span class="txt_title">Job satisfaction</span>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="1"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="2"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="3"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="4"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="5"></mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <div style="width: 84%;display: flex;justify-content: end;">
+          <mat-error *ngIf="employeeForm.get('job_satisfaction').invalid && employeeForm.get('job_satisfaction').touched" style="font-size: 11px;font-weight: 500;text-align: start;">Job Satisfaction Cannot be empty
+          </mat-error>
+        </div>
+          <mat-radio-group class="q_box_1_div_main" formControlName="distance_from_home" [(ngModel)]="surveyModel.distance_from_home">
+            <div class="q_box_1_div_main_1">
+              <span class="txt_title">Distance from home to hotel</span>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="1"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="2"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="3"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="4"></mat-radio-button>
+            </div>
+            <div class="q_box_1_div_main_2">
+              <mat-radio-button class="radio_stl" value="5"></mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <div style="width: 84%;display: flex;justify-content: end;">
+          <mat-error *ngIf="employeeForm.get('distance_from_home').invalid && employeeForm.get('distance_from_home').touched" style="font-size: 11px;font-weight: 500;text-align: start;">Distance From Home Cannot be empty
+          </mat-error>
+          </div>
+        </div>
+
+        <!--card-1-->
+        <div class="q_box_1">
+          <div class="q_box_1_header">
+            <span class="txt_title">Years since last promotion</span>
+          </div>
+          <mat-radio-group class="q_box_1_body" formControlName="last_promotion" [(ngModel)]="surveyModel.last_promotion">
+            <mat-radio-button class="radio_stl" value="1">Less than 1 year</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="2">1-3 years</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="3">3-5 years</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="4">5-10 years</mat-radio-button>
+            <!-- <mat-radio-button class="radio_stl" value="5">10 years and above</mat-radio-button> -->
+            <mat-radio-button class="radio_stl" value="6">None received</mat-radio-button>
+          <br>
+            <mat-error *ngIf="employeeForm.get('last_promotion').invalid && employeeForm.get('last_promotion').touched" style="font-size: 11px;font-weight: 500;text-align: start;">Years since last promotion Cannot be empty
+            </mat-error>
+          </mat-radio-group>
+        </div>
+        <!--card-2-->
+        <!--<div class="q_box_1">-->
+          <!--<div class="q_box_1_header">-->
+            <!--<span class="txt_title">Level of job Involvement</span>-->
+          <!--</div>-->
+          <!--<div class="q_box_1_body">-->
+            <!--<mat-radio-button class="radio_stl" value="1">High</mat-radio-button>-->
+            <!--<mat-radio-button class="radio_stl" value="2">Moderate</mat-radio-button>-->
+            <!--<mat-radio-button class="radio_stl" value="3">Low</mat-radio-button>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--card-3-->
+        <div class="q_box_1">
+          <div class="q_box_1_header">
+            <span class="txt_title">Performance Assessment Frequency</span>
+          </div>
+          <mat-radio-group class="q_box_1_body" formControlName="hotel_assess_performance" [(ngModel)]="surveyModel.hotel_assess_performance">
+            <mat-radio-button class="radio_stl" value="1">Quite Often</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="2">Often</mat-radio-button>
+            <mat-radio-button class="radio_stl" value="3">Less Often</mat-radio-button>
+            <mat-error *ngIf="employeeForm.get('hotel_assess_performance').invalid && employeeForm.get('hotel_assess_performance').touched" style="font-size: 11px;font-weight: 500;text-align: start;">Performance Assessment Frequency Cannot be empty
+            </mat-error>
+          </mat-radio-group>
+        </div>
+
+        <!--&lt;!&ndash;card-3&ndash;&gt;-->
+        <!--<div class="q_box_1">-->
+          <!--<div class="q_box_1_header">-->
+            <!--<span class="txt_title">Do you intend to leave the hotel in the near future</span>-->
+          <!--</div>-->
+          <!--<div class="q_box_1_body">-->
+            <!--<mat-radio-button class="radio_stl" value="1">Yes</mat-radio-button>-->
+            <!--<mat-radio-button class="radio_stl" value="2">No</mat-radio-button>-->
+          <!--</div>-->
+        <!--</div>-->
+
+      </div>
+      <div class="btn_section">
+        <button class="btn_share" type="submit" mat-flat-button>Submit</button>
+      </div>
+    </form>
+
+    <br>
+
+  </div>
+  
+
+</div>

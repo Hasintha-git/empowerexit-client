@@ -1,0 +1,70 @@
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<mat-sidenav-container class="post-login-container" autosize>
+    <mat-sidenav #sidenav id="sidenav" class="post-login-sidenav" mode="side" [class.menu-open]="isVisible"
+        [class.menu-close]="!isVisible" opened>
+        <mat-list id="menus">
+            <mat-card class="mat-elevation-z0">
+                <mat-card-header style="display: flex;justify-content: center;">
+                    <img class="post-login-logo" src="../../../assets/images/exitpred_logo_bg_trans.png" routerLink="/post-login/dashboard"  alt="">
+                </mat-card-header>
+            </mat-card>
+            <mat-list>
+                <button routerLink="dashboard" routerLinkActive="activated-route" class="menu-item" mat-flat-button>
+                      <img class="menu_img" src="../../../assets/icons/dashboard.png" alt="">
+                    <span class="txt_route">Dashboard</span>
+                </button>
+            </mat-list>
+            <mat-list>
+                <button routerLink="employee-analytics" routerLinkActive="activated-route" class="menu-item"
+                    mat-flat-button>
+                  <img class="menu_img" src="../../../assets/icons/employee.png" alt="">
+
+                  <span class="txt_route">Employee Analytics</span>
+                </button>
+            </mat-list>
+            <mat-list>
+                <button routerLink="departmental-insights" routerLinkActive="activated-route" class="menu-item"
+                    mat-flat-button>
+                  <img class="menu_img" src="../../../assets/icons/departmental.png" alt="">
+
+                  <span class="txt_route">Departmental Insights</span>
+                </button>
+            </mat-list>
+        </mat-list>
+      <div class="div_logout">
+        <mat-list>
+          <button (click)="logoutUser()" class="menu-item"
+                  mat-flat-button>
+            <img class="menu_img" src="../../../assets/images/logout.png" alt="">
+
+            <span class="txt_route">Logout</span>
+          </button>
+        </mat-list>
+      </div>
+    </mat-sidenav>
+
+
+
+
+
+    <mat-sidenav-content class="post-login-main-side">
+        <mat-toolbar class="header-bar">
+            <!-- (click)="sidenav.toggle()"  -->
+            <button (click)="onMenuToggle()" mat-icon-button class="menu-icon"
+                aria-label="Example icon-button with menu icon">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span class="active_router">{{activeRouter}}</span>
+            <span class="example-spacer"></span>
+            <button [hidden]="isSurveyShareEnble" mat-icon-button class="header-icon favorite-icon btn-survey" (click)="surveyShare()">
+              Share Survey
+            </button>
+        </mat-toolbar>
+        <div class="body-area">
+            <div class="sub-body-area">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'SourceSansPro';
+    src: url('../../../../../../../assets/fonts/SourceSansPro.ttf');
+}
+
+.div_dialog_main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 670px;
+    height: 250px;
+    padding: 0;
+
+    .txt_title {
+        padding-bottom: 20px;
+        font-size: 14px;
+        font-family: 'SourceSansPro';
+        font-weight: 500;
+    }
+
+    .div_txt_area {
+        border: 1px solid #000080;
+        width: 650px;
+        height: 200px;
+        border-radius: 20px;
+
+        .txt_area {
+            width: 95%;
+            height: 98%;
+            border: transparent;
+            outline: transparent;
+            border-radius: 20px;
+        }
+    }
+
+    .div_btn_area {
+        width: 98%;
+        height: 70px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .btn_cancel {
+            border-radius: 50px;
+            width: 100px;
+            margin-right: 20px;
+            border: 1px solid #000080;
+            color: #000080;
+            background-color: white;
+        }
+
+        .btn_save {
+            border-radius: 50px;
+            width: 100px;
+            background-color: #000080;
+            color: white;
+        }
+    }
+}
+
+
+.close-button {
+    position: absolute;
+    top: 190px;
+    right: 340px;
+    // float: right;
+    // top: -15px;
+    // right: -15px;
+    // position: relative;
+    background-color: transparent;
+}
+
+.close-icon {
+    transition: 1s ease-in-out;
+}
+
+.close-icon:hover {
+    transform: rotate(180deg);
+}
+
+::ng-deep .icon-outside .close-button {
+    float: right;
+    top: -52px;
+    right: -52px;
+}
+
+::ng-deep .icon-outside .mat-dialog-container {
+    overflow: unset
+}
+
+.my-dialog .mat-dialog-container {
+    border-radius: 20px !important;
+    height: auto;
+ }
+
