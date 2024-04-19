@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "public": "dist/exitpredict",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "appAssociation": "AUTO",
+    "rewrites": [ {
+      "source": "/search/**", 
+      "dynamicLinks": true
+    },
+    {
+      "source": "**",
+      "destination": "/index.html"
+    }]
+  }
+}
