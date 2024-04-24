@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/exitpredict'),
+      dir: require('path').join(__dirname, './coverage/empowerexit'),
       subdir: '.',
       reporters: [
         { type: 'html' },

@@ -6,10 +6,9 @@ import { UserResponse } from 'src/app/models/response/user-response';
 import { StorageService } from 'src/app/models/StorageService';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user/user.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { SessionService } from 'src/app/services/session/session-service.service';
 import { NgxSpinnerService } from "ngx-spinner";
-import { ToastrService } from 'ngx-toastr';
 import { ToastServiceService } from 'src/app/services/toast-service.service';
 
 @Component({
@@ -21,11 +20,9 @@ export class SignInComponent implements OnInit {
   hide = true;
   signInModel = new User();
   userForm: FormGroup;
-  constructor(private toastr: ToastServiceService,private spinner: NgxSpinnerService,private sessionService: SessionService,private _snackBar: MatSnackBar,private routerLink: Router, private formBuilder: FormBuilder,private userService: UserService, private sessionStorage: StorageService) { }
+  constructor(private toastr: ToastServiceService, private spinner: NgxSpinnerService, private sessionService: SessionService, private _snackBar: MatSnackBar, private routerLink: Router, private formBuilder: FormBuilder, private userService: UserService, private sessionStorage: StorageService) { }
 
   ngOnInit(): void {
-
-    
     this.initialValidator();
   }
   openSnackBar(message: string, action: string) {
@@ -39,25 +36,19 @@ export class SignInComponent implements OnInit {
     });
   }
 
-onSubmit() {    
-  this.spinner.show();
+  onSubmit() {
+    this.spinner.show();
     if (this.userForm.valid) {
-      this.signInModel.last_name="";
-      this.userService.userLogin(this.signInModel).subscribe((userResponse: any)=> {
-          this.sessionStorage.setItem("user",userResponse.data);
-          this.routerLink.navigateByUrl('/post-login')
-          this.spinner.hide();
-
-        // if(userResponse.data != null) {
-        //   this.sessionStorage.setItem("user",userResponse.data);
-        //   this.routerLink.navigateByUrl('/post-login')
-
-        // }
-      },
-      error => {
+      this.signInModel.last_name = "";
+      this.userService.userLogin(this.signInModel).subscribe((userResponse: any) => {
+        this.sessionStorage.setItem("user", userResponse.data);
+        this.routerLink.navigateByUrl('/post-login')
         this.spinner.hide();
-        this.toastr.errorMessage(error);
-      }
+      },
+        error => {
+          this.spinner.hide();
+          this.toastr.errorMessage(error);
+        }
       )
     } else {
       this.toastr.errorMessage('Please fill in all required fields');
@@ -67,14 +58,12 @@ onSubmit() {
   }
 
   mandatoryValidation(formGroup: FormGroup) {
-    // this.isEmptyThumbnail = false;
     for (const key in formGroup.controls) {
       if (formGroup.controls.hasOwnProperty(key)) {
-        const control: FormControl = <FormControl> formGroup.controls[key];
+        const control: FormControl = <FormControl>formGroup.controls[key];
         if (Object.keys(control).includes('controls')) {
-          const formGroupChild: FormGroup = <FormGroup> formGroup.controls[key];
+          const formGroupChild: FormGroup = <FormGroup>formGroup.controls[key];
           this.mandatoryValidation(formGroupChild);
-
         }
         control.markAsTouched();
       }

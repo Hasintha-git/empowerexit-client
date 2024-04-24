@@ -20,10 +20,6 @@ export class EmployeeSurveyManagementComponent implements OnInit {
     this.initialValidator();
   }
 
-  openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action);
-  }
-
   initialValidator() {
     this.employeeForm = this.formBuilder.group({
       emp_id : this.formBuilder.control('', [Validators.required]),
@@ -56,6 +52,10 @@ export class EmployeeSurveyManagementComponent implements OnInit {
     // });
   }
 
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
+  }
   onSubmit() {
     this.spinner.show();
     if (this.employeeForm.valid) {

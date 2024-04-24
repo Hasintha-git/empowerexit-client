@@ -14,7 +14,7 @@ const routes: Routes = [
     component: SignInComponent,
   },
   {
-    path: 'exitpredict/register',
+    path: 'empowerexit/register',
     component: SignUpComponent,
   },
   {

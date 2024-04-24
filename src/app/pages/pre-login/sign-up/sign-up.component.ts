@@ -21,7 +21,6 @@ export class SignUpComponent implements OnInit {
   constructor(
     private toastr: ToastServiceService,
     private spinner: NgxSpinnerService,
-    private routerLink: Router, 
     private formBuilder: FormBuilder,
     private userService: UserService
     ) { }
@@ -32,7 +31,6 @@ export class SignUpComponent implements OnInit {
   initialValidator() {
   this.userForm = this.formBuilder.group({
     first_name : this.formBuilder.control('', [Validators.required]),
-    // last_name : this.formBuilder.control('', [Validators.required]),
     email : this.formBuilder.control('', [Validators.required]),
     password : this.formBuilder.control('', [Validators.required])
   });
@@ -43,7 +41,6 @@ export class SignUpComponent implements OnInit {
     if (this.userForm.valid) {
       this.userService.userRegister(this.signUpModel).subscribe((userResponse: any)=> {
         this.toastr.successMessage(userResponse.msg);
-        // this.routerLink.navigateByUrl('/login')
         this.userForm.reset();
         Object.keys(this.userForm.controls).forEach(key => {
           const control = this.userForm.controls[key];
